@@ -1,78 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="8dp">
+        android:layout_margin="8dp"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginBottom="30dp"
-            android:contentDescription="Mapa Brasil"
-            android:scaleType="center"
-            android:src="@drawable/mapa_brasil">
-
-        </ImageView>
-
+            android:src="@drawable/mapa_brasil"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Digite o Estado"
-            android:textSize="25sp"/>
+            android:text="Digite o Estado"/>
+
 
         <EditText
+            android:id="@+id/textEstado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Estado (Sigla)"/>
+            android:hint="Digite o Estado Aqui"
+            android:inputType="textCapCharacters"
+            android:maxLength="2"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Digite o Valor"
-            android:textSize="25sp"/>
+            android:text="Digite o Valor da Mercadoria"
+            android:layout_marginTop="15dp"/>
+
 
         <EditText
+            android:id="@+id/textValorMercadoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Valor do Produto"/>
+            android:hint="Digite o Valor Aqui"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="15dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#2196F3"
-            android:orientation="vertical">
-
+            android:layout_margin="8dp"
+            android:background="#00BCD4"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                    android:text="Porcentagem do ICMS"
-                    android:textSize="20sp"/>
+                android:text="Porcentagem do ICMS"
+                android:gravity="center"
+                android:textColor="#FFFFFF"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Porcentagem do ICMS"
-                    android:textSize="%"/>
 
-            </LinearLayout>
-
-            <Button
+            <TextView
+                android:id="@+id/textIcmsPorcentagem"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="Calcular"/>
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Valor total da Mercadoria"
+                android:gravity="center"
+                android:textColor="#FFFFFF"/>
+
+
+            <TextView
+                android:id="@+id/textValorTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="R$ 0,00"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCalcular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calcular"
+            android:onClick="calcular"/>
 
     </LinearLayout>
-
-    
 </ScrollView>
